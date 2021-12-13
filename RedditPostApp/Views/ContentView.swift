@@ -54,7 +54,7 @@ struct ContentView: View {
 
             } label: {
                 
-                Text("let's go!").font(.system(.caption)).foregroundColor(.white).frame(maxWidth:.infinity).frame(height:60).background(Color.indigo).mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                Text("let's go!").font(.system(.caption)).foregroundColor(.white).frame(maxWidth:.infinity).frame(height:60).background(Color("buttonColor")).mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
 
 
