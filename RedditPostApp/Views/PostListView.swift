@@ -16,7 +16,7 @@ struct PostListView: View {
     var body: some View {
        
         ZStack{
-            
+            // checks if user is searching using environment variable
             if isSearching{
                 
                 if listViewModel.filteredPostArray.count > 0{
@@ -24,7 +24,7 @@ struct PostListView: View {
                     PostListComponent(array: $listViewModel.filteredPostArray, presentWebView: $presentWebView, webView: $webView)
                     
                 }else{
-                    
+                    //Display list with no results if array is empty
                     List{
                         
                         Text("No results :(")
@@ -35,7 +35,7 @@ struct PostListView: View {
                 
                 
             }else{
-                
+                // display regular, unfiltered list view
                 PostListComponent(array: $listViewModel.postArray,presentWebView: $presentWebView, webView: $webView)
                 
             }
@@ -51,7 +51,7 @@ struct PostListView_Previews: PreviewProvider {
     }
 }
 
-
+// list component 
 struct PostListComponent:View{
     
     @Binding var array : [Children]

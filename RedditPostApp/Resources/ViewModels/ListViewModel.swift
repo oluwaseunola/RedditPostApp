@@ -12,7 +12,7 @@ class ListViewModel : ObservableObject {
     @Published var postArray = [Children]()
     @Published var filteredPostArray = [Children]()
     
-    
+    // Fetch posts for reddit endpoint
     @MainActor
      func fetchPosts(postAmount: Int) async {
         
@@ -25,7 +25,7 @@ class ListViewModel : ObservableObject {
          
         
     }
-    
+    // Filter initial posts according to input by user
     func filterPosts(text: String){
         var filteredPosts = [Children]()
        

@@ -22,9 +22,12 @@ struct ContentView: View {
                 
                 VStack{
                 
-                VStack{Text("Amount of posts to display")
+                VStack{
+                    //Post amount input
+                    
+                    Text("Amount of posts to display")
 
-                    TextField("", text: $postAmount, prompt: Text("1")).frame(maxWidth:100).frame(height: 50).multilineTextAlignment(.center).overlay(RoundedRectangle(cornerRadius: 6, style: .continuous).stroke().foregroundColor(.black)).padding(.horizontal)
+                    TextField("", text: $postAmount, prompt: Text("1")).frame(maxWidth:100).frame(height: 50).multilineTextAlignment(.center).overlay(RoundedRectangle(cornerRadius: 6, style: .continuous).stroke().foregroundColor(.primary)).padding(.horizontal)
                         .onSubmit {
                             focus = false
                         }.focused($focus)
@@ -33,6 +36,8 @@ struct ContentView: View {
                 }
             
             NavigationLink{
+                
+                // Nav link to PostListView
 
                 PostListView().navigationTitle("Reddit Posts").searchable(text: $text, placement: .toolbar, prompt: "Search a subreddit!", suggestions: {
                     
@@ -65,9 +70,7 @@ struct ContentView: View {
                         }
                         
                     })
-                    
-                
-
+              
                 
         }.navigationTitle(Text("Explore Reddit Today"))
                     
@@ -76,12 +79,9 @@ struct ContentView: View {
             }
                 
                 
-            
-            
-            
-        
-            
     }
+    
+    // fetch posts when user clicks nav link
     
     private func fetchPosts() async{
         

@@ -11,6 +11,7 @@ struct NetworkManager{
     
     static var shared = NetworkManager()
     
+    // fetch reddit page data
     
     func fetchData(urlString: String) async -> [PostModel]{
         
